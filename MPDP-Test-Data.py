@@ -4,7 +4,7 @@ import requests
 import random
 
 df = pd.DataFrame()
-numParticipants = 5
+numParticipants = 255
 
 apiName = "https://random-data-api.com/api/v2/users"
 apiPostCode = "https://api.postcodes.io/random/postcodes"
