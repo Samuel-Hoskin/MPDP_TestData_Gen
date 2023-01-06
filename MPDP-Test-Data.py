@@ -94,7 +94,7 @@ for x in range(numParticipants):
             scheme = "Farming Equipment and Technology Fund"
             activity_detail = "General"
             amount = random.randint(1250,5000)
-        df = df.append({'payee_name':nameResult, 'part_postcode':outcode, 'town':town, 'county':admin_county, 'parliamentary_constituency':parliamentary_constituency, 'scheme':scheme, 'activity_detail':activity_detail, 'amount':amount}, ignore_index=True)
+        df = df.append({'payee_name':nameResult, 'part_postcode':outcode, 'town':town, 'county_council':admin_county, 'parliamentary_constituency':parliamentary_constituency, 'scheme':scheme, 'scheme_detail':activity_detail, 'amount':amount}, ignore_index=True)
 
 df.to_csv('testData.csv', index=False)
 
