@@ -104,6 +104,8 @@ for index, row in df.iterrows():
         values = str(tuple(row.values)) + "," + '\n'
         value = value + values
 value = value[:-1]
+value = value[:-1]
+value = value + ";"
 sqlScript = start + value
 
 
