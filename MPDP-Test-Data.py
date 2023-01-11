@@ -12,7 +12,7 @@ numParticipants = 255
 apiName = "https://random-data-api.com/api/v2/users"
 apiPostCode = "https://api.postcodes.io/random/postcodes"
 financial_year = "21/22"
-activity_level="Medium"
+activity_level=""
 
 print("Generating sample data in CSV & SQL insert file")
 for x in range(numParticipants):
