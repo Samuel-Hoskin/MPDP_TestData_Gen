@@ -101,9 +101,9 @@ for x in range(numParticipants):
             scheme = "Farming Equipment and Technology Fund"
             scheme_detail = "General"
             amount = random.randint(1250,5000)
-        df = df.append({'payee_name':nameResult, 'part_postcode':outcode, 'town':town, 'county_council':admin_county, 'parliamentary_constituency':parliamentary_constituency, 'scheme':scheme, 'scheme_detail':scheme_detail,'activity_level':activity_level, 'financial_year':financial_year, 'amount':amount}, ignore_index=True)
+        df = df.append({'financial_year':financial_year, 'payee_name':nameResult, 'part_postcode':outcode, 'town':town, 'parliamentary_constituency':parliamentary_constituency, 'county_council':admin_county, 'scheme':scheme, 'scheme_detail':scheme_detail,'activity_level':activity_level, 'amount':amount}, ignore_index=True)
 df.to_csv('testData.csv', index=False)
-start = 'INSERT INTO '+'public."payment_activity_data"'+' ('+ str(', '.join(df.columns))+ ') VALUES '
+start = 'INSERT INTO '+'public."payment_activity_data"'+' ('+ '\n' + '\t' + str(', '.join(df.columns))+ ')' + '\n' + 'VALUES '
 value = ""
 for index, row in df.iterrows():       
         values = str(tuple(row.values)) + "," + '\n'
