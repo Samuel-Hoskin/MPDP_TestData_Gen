@@ -1,13 +1,11 @@
 import pandas as pd
 import requests
 import random
-import warnings
 
-# disable the future warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
 
 df = pd.DataFrame()
-numParticipants = 20
+numParticipants = 10
+# max years is 5
 numYears = 5
 
 apiName = "https://random-data-api.com/api/v2/users"
@@ -114,8 +112,6 @@ for x in range(numParticipants):
                 scheme = "Farming Equipment and Technology Fund"
                 scheme_detail = "General"
                 amount = random.randint(1250,5000)
-            # df = df.append({'payee_name':nameResult, 'part_postcode':outcode, 'town':town, 'county_council':admin_county, 'parliamentary_constituency':parliamentary_constituency, 'scheme':scheme, 'scheme_detail':scheme_detail,'activity_level':activity_level, 'financial_year':financial_year, 'amount':amount}, ignore_index=True)
-
             new_row = {'payee_name': nameResult, 'part_postcode': outcode, 'town': town, 'county_council': admin_county, 'parliamentary_constituency': parliamentary_constituency, 'scheme': scheme, 'scheme_detail': scheme_detail, 'activity_level': activity_level, 'financial_year': financial_year, 'amount': amount}
             df = pd.concat([df, pd.DataFrame(new_row, index=[0])], ignore_index=True)
 
@@ -131,10 +127,7 @@ value = value + ";"
 value = value.replace("\"","'")
 sqlScript = start + value
 
-
 with open('sqlScript.sql', 'w') as f:
     f.write(sqlScript)
 
 print("\nSample data generation complete")
-
-
