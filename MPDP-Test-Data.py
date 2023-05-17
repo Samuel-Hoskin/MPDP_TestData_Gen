@@ -4,7 +4,7 @@ import random
 
 
 df = pd.DataFrame()
-numParticipants = 10
+numParticipants = 100
 # max years is 5
 numYears = 5
 
